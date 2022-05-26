@@ -6,6 +6,8 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    'gatsby-plugin-postcss',
+   
     {
       resolve: "gatsby-plugin-sass",
       options: {
@@ -33,6 +35,13 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/img`,
+        name: "images",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/components`,
         name: "images",
       },
     },
@@ -72,6 +81,14 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /public/ // See below to configure properly
+        }
+      }
     },
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules

@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: "LETS GET STARTED "
+title: LETS GET STARTED WHAT IS THE PLAN FOR THIS REPO
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup

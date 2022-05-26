@@ -6,10 +6,12 @@ import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
+const highlightedSpanStyle = 'text-primarylight-100 font-bold'
+
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
+    <div className="">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -48,11 +50,17 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
+      <div className="w-full bg-primarydark-100 flex py-2">
+        <strong className="mx-auto text-gray-50 text-xl font-medium font-montserrat">NEED A <span className={highlightedSpanStyle}>RELIABLE PLUMBER</span> IN <span className={highlightedSpanStyle}>NOTTINGHAM</span>? CALL <span className={highlightedSpanStyle}>0115 978 3273</span> TO ARRANGE A <span className={highlightedSpanStyle}>NO FEE CALL-OUT</span></strong>
+      </div>
       <Navbar />
       <div>{children}</div>
       <Footer />
     </div>
   );
 };
+
+
+
 
 export default TemplateWrapper;

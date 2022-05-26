@@ -1,101 +1,39 @@
 import React from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import logo from '../../assets/logo.svg';
+import {BsFillTelephoneFill} from 'react-icons/bs';
+import { useStaticQuery, graphql } from "gatsby"
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      navBarActiveClass: "",
-    };
-  }
 
-  toggleHamburger() {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: "is-active",
-            })
-          : this.setState({
-              navBarActiveClass: "",
-            });
-      }
-    );
-  }
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
+
+function Navbar(props, {data}) {
+  
+  return (
+<nav
+        className="w-full min-h-[60px] sticky top-0 flex z-50 bg-white font-montserrat"
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
-              tabIndex={0}
-              onKeyPress={() => this.toggleHamburger()}
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
+        <img src={logo} alt='Sherwood Plumbing Logo' className="m-4 h-24"/>
+        <div className=" bg-primarydark-100 w-64 flex flex-col">
+            <span className=" text-gray-50 h-1/2 text-xl mx-auto p-2 text-center font-medium">USE THE <span className="text-primarylight-100 font-semibold">BEST</span>.<br></br>FLUSH THE <span className="text-primarylight-100 font-semibold">REST</span>.</span>
+            <span className="mx-auto text-primarylight-100 my-auto text-2xl font-semibold flex"><BsFillTelephoneFill height={10} width={10}  className='my-auto mx-2'/> 0115 978 3273</span>
         </div>
-      </nav>
-    );
-  }
-};
-
+        <div className=" bg-primarylight-100 w-64 flex flex-col">
+            <span className=" text-primarydark-100 h-1/2 text-xl mx-auto p-2 text-center font-semibold ">{props.openingDates}<br></br>{props.openingTimes}</span>
+            <span className="mx-auto text-primarylight-100 my-auto text-2xl font-bold flex"><BsFillTelephoneFill height={10} width={10}  className='my-auto mx-2'/> 0115 978 3273</span>
+        </div>
+      </nav>  )
+}
+// export const query = graphql`
+// query NavbarQuery {
+//   markdownRemark(frontmatter: {templateKey: {eq: "navbar"}}) {
+//     frontmatter {
+//       openingTimes
+//       openingDates
+//     }
+//   }
+// }
+// `
 export default Navbar;

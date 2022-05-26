@@ -32,7 +32,33 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-
+  - name: "navbar"
+    label: "Navigation Bar"
+    files: 
+      - file: "src/components/navbar.md"
+        label: "Navigation Bar"
+        name: "navbar"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "navbar",
+            }
+          - { label: Opening Times, name: openingTimes, widget: string }
+          - { label: Opening Days, name: openingDates, widget: string}
+          - {
+              label: Address,
+              name: address,
+              widget: object,
+              fields:
+                [
+                    { label: Address Line 1, name: address_line_1, widget: string}
+                    { label: Address Line 2, name: address_line_2, widget: string}
+                    { label: Address Line 3, name: address_line_3, widget: string}
+                ],
+            }
+         
   - name: "pages"
     label: "Pages"
     files:
@@ -47,6 +73,8 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
+          - { label: Opening Times, name: openingtimes, widget: string }
+
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
