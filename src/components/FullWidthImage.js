@@ -8,7 +8,9 @@ export default function FullWidthImage(props) {
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    imgPosition = "middle middle",
+    variant = "center",
+    cta_button = null
   } = props;
 
   return (
@@ -55,7 +57,7 @@ export default function FullWidthImage(props) {
             formats={["auto", "webp", "avif"]}
           />
         )}
-        {(title || subheading) && (
+        {(title || subheading) && variant==='middle'&&(
           <div
             style={{
               // By using the same grid area for both, they are stacked on top of each other
@@ -65,6 +67,7 @@ export default function FullWidthImage(props) {
               placeItems: "center",
               display: "grid",
             }}
+            
           >
             {/* Any content here will be centered in the component */}
             {title && (
@@ -98,6 +101,44 @@ export default function FullWidthImage(props) {
                 {subheading}
               </h3>
             )}
+          </div>
+        )}
+                {(title || subheading) && variant==='right'&&(
+          <div
+            style={{
+              // By using the same grid area for both, they are stacked on top of each other
+              gridArea: "1/1",
+              position: "relative",
+              // This centers the other elements inside the hero component
+              display: "grid",
+            }}
+            className='w-full mb-10 md:w-1/3 bg-primarydark-100 bg-opacity-80 md:bg-opacity-100 md:mx-10'
+          >
+            <div className="flex flex-col">
+            {/* Any content here will be centered in the component */}
+            {title && (
+              <h1
+                className="text-4xl lg:text-6xl font-bold font-montserrat px-4 pb-2 pt-4 text-gray-100"
+              
+              >
+                {title}
+              </h1>
+            )}
+            {subheading && (
+              <h3
+                className="text-xl lg:text-lg font-bold font-montserrat px-4 pb-4 pt-2 text-gray-100"
+              
+              >
+                {subheading}
+              </h3>
+
+            )}
+            {cta_button && (
+             <button className="w-max m-4 p-4 text-lg rounded-md font-montserrat font-bold bg-primarylight-100 mx-auto">
+                CONTACT US
+             </button>
+            )}
+          </div>
           </div>
         )}
       </div>

@@ -8,10 +8,11 @@ import { withPrefix } from "gatsby";
 
 const highlightedSpanStyle = 'text-primarylight-100 font-bold'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, navbarData, currentRoute }) => {
   const { title, description } = useSiteMetadata();
+  console.log(navbarData);
   return (
-    <div className="">
+    <div className=" max-w-screen ">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -51,9 +52,9 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <div className="w-full bg-primarydark-100 flex py-2">
-        <strong className="mx-auto text-gray-50 text-xl font-medium font-montserrat">NEED A <span className={highlightedSpanStyle}>RELIABLE PLUMBER</span> IN <span className={highlightedSpanStyle}>NOTTINGHAM</span>? CALL <span className={highlightedSpanStyle}>0115 978 3273</span> TO ARRANGE A <span className={highlightedSpanStyle}>NO FEE CALL-OUT</span></strong>
+        <strong className="mx-auto text-gray-50 text-base md:text-lg font-medium text-center px-4 font-montserrat">NEED A <span className={highlightedSpanStyle}>RELIABLE PLUMBER</span> IN <span className={highlightedSpanStyle}>NOTTINGHAM</span>? CALL <span className={highlightedSpanStyle}>0115 978 3273</span> TO ARRANGE A <span className={highlightedSpanStyle}>NO FEE CALL-OUT</span></strong>
       </div>
-      <Navbar />
+      <Navbar currentRoute={currentRoute} openingTimes={navbarData.frontmatter.openingTimes} openingDates={navbarData.frontmatter.openingDates} address={navbarData.frontmatter.address}/>
       <div>{children}</div>
       <Footer />
     </div>

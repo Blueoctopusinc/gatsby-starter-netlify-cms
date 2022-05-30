@@ -8,7 +8,7 @@ const NavbarPagePreview = ({ entry, getAsset }) => {
 
   if (data) {
     return (
-        <Navbar openingTimes={data.openingTimes} openingDates={data.openingDates}/>
+        <Navbar openingTimes={data.openingTimes} openingDates={data.openingDates} addressObject={data.address}/>
     //   <IndexPageTemplate
     //     image={getAsset(data.image)}
     //     title={data.title}

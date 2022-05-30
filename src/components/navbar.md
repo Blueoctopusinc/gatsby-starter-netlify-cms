@@ -8,5 +8,9 @@ address_line_1: 137 PLUMBERS Drive
 address_line_2: NOTTINGHAM
 address_line_3: NG8 PLUM8
 openingDats: MONDAY - FRIDAY
+address:
+  address_line_1: 137 PLUMBERS DRIVE
+  address_line_2: NOTTINGHAM
+  address_line_3: NG8 PLUM8
 slogan: Hello
 ---

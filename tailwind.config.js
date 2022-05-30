@@ -8,10 +8,10 @@ module.exports = {
 
       colors: {
         primarydark: {
-          100: '#282B3F'
+          100: '#042553'
         },
         primarylight: {
-          100: '#DDC139'
+          100: '#f5e062'
         } 
 
       },

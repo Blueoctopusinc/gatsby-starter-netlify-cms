@@ -1,9 +1,57 @@
 ---
 templateKey: index-page
-title: LETS GET STARTED WHAT IS THE PLAN FOR THIS REPO
-image: /img/home-jumbotron.jpg
+title: Quick, Reliable Nottingham Plumbers
+openingtimes: tt
+image: /img/sp_hero.jpg
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+subheading: "Sherwood Plumbing has been providing local plumbers in Nottingham
+  to for over 20 years. We service both the public and trade, tackling any job
+  big or small. Priding ourselves on providing the highest level of service. "
+feature:
+  image1:
+    title: GAS
+    image: /img/4.jpg
+    alt: Gas Hob
+    description: All of our engineering team are Gas Safe registered. From fitting a
+      new boiler to performing maintenance on your existing system SP Plumbing
+      have you covered.
+  image2:
+    title: PLUMBING
+    image: /img/3.jpg
+    alt: Water system
+    description: We offer a comprehensive suite of plumbing services. From large
+      industrial installations in flats to leaky pipes for homeowners. All of
+      our engineers are fully certified and ready to tackle any plumbing job.
+  image3:
+    title: DRAINAGE
+    image: /img/2.jpg
+    alt: Drainage cover
+    description: We clear blocked drains in the wider Nottinghamshire area fast at a
+      fixed fee and with no hidden extras. We provide 24 hour emergency drain
+      cover so our clients are covered at all times.
+  image4:
+    title: WATER TESTING
+    image: /img/1.jpg
+    alt: Running tap
+    description: "Our engineers can provide a comprehensive set of water tests to
+      ensure that your residents, tenants and workers are safe at all times.
+      Once onboard we can setup a years inspection so you have peace of mind 365
+      days a year. "
+  heading: NO CALL OUT FEE
+  description: WE ONLY CHARGE FOR COMPLETE WORK
+center:
+  heading: Qualified Nottingham Plumbers
+  description: We offer a wide range of services from large commercial projects,
+    long term maintenance for landlords and small household repairs. Our staff
+    pride themselves on giving the best service possible.   We offer full
+    transparency on costs with competitive labor rates so you can make an
+    informed decision. Our dedicated support team will get one of our expert
+    tradesman out to tackle any problem head on.   We offer up to a 10 year
+    guarantee on our work using the highest quality parts. Call us to use the
+    best and flush the rest.
+  blurbs:
+    - text: 24/7 Emergency Service
+  backgroundimage: /img/hero2.jpg
 mainpitch:
   title: Why Kaldi
   description: >
